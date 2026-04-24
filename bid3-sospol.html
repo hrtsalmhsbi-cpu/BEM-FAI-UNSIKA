@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="id" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOSPOL - BEM FAI UNSIKA</title>
+
+  <!-- Tailwind + Config -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'purple-deep': '#2D1B4E',
+            'purple-med': '#5B3A8C',
+            'purple-light': '#9B72CF',
+            'purple-soft': '#D4BEF0',
+            'purple-pale': '#F3ECFA',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .section-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(45,27,78,0.15); }
+    .bg-mesh {
+      background: radial-gradient(ellipse at 20% 50%, rgba(91,58,140,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 20%, rgba(155,114,207,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 80%, rgba(212,190,240,0.05) 0%, transparent 50%);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 h-full">
+
+<!-- NAVBAR (100% sama seperti index.html) -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+     style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,190,240,0.3);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden">
+          <img src="assets/logo-bem.png" alt="Logo BEM" class="w-full h-full object-cover">
+        </div>
+        <div class="block text-xs sm:text-sm">
+          <div class="font-bold text-purple-deep leading-tight">Kabinet Poros Katalis</div>
+          <div class="text-[10px] text-purple-med font-medium tracking-wider">BEM FAI UNSIKA</div>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="index.html#Beranda" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Beranda</a>
+        <a href="index.html#tentang" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Tentang</a>
+        <a href="index.html#bidang" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Struktur</a>
+        <a href="index.html#proker" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Program Kerja</a>
+        <a href="index.html#berita" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Berita</a>
+        <a href="index.html#media" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Media</a>
+
+        <a href="index.html#kontak"
+           class="ml-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl"
+           style="background: linear-gradient(135deg, #5B3A8C, #9B72CF);">
+          Kontak
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="pt-20">
+  <img src="assets/bidang/sospol.jpeg"
+       class="w-full h-64 sm:h-80 object-cover rounded-b-3xl shadow-md">
+       <div class="absolute inset-0 bg-black/20"></div>
+</section>
+
+<!-- TENTANG -->
+   <section id="bidang" class="section-fade py-20 sm:py-28 bg-white bg-mesh">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div><span class="inline-block px-4 py-1.5 bg-purple-pale text-purple-med text-xs font-bold rounded-full tracking-wider uppercase mb-6">
+        Tentang Kami
+      </span>
+       <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-purple-deep mb-6 leading-tight">
+        Bidang Sosial & Politik<br><span class="gradient-text">BEM FAI UNSIKA
+        </span>
+      </h2>
+       <p id="about-text" class="text-gray-600 leading-relaxed mb-8 text-lg">
+        Bidang Sosial & Politik adalah bidang yang berperan sebagai garda terdepan dalam merespons isu-isu sosial, politik, dan kebijakan yang berkaitan dengan mahasiswa maupun masyarakat luas. Bidang ini menjalankan fungsi kajian, advokasi, serta aksi strategis dalam menyikapi berbagai permasalahan. Selain itu, bidang ini juga bertanggung jawab dalam meningkatkan kesadaran politik mahasiswa, mengawal kebijakan, serta mengoordinasikan gerakan mahasiswa secara terarah dan berdampak.
+      </p>
+       <div class="space-y-4">
+        <div class="flex items-start gap-4">
+         <div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="relative">
+       <div class="rounded-3xl overflow-hidden p-8 relative" style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+        <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 30% 40%, #D4BEF0, transparent 60%);"></div>
+        <div class="relative z-10 text-center space-y-6">
+         <div class="w-32 h-32 mx-auto rounded-2xl flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/10">
+            <img src="assets/bidang/logo-sospol.png" alt="Logo SOSPOL" class="w-full h-full object-cover">
+         </div>
+         <div>
+          <h3 class="font-display text-2xl font-bold text-white">Bidang Sosial & Politik</h3>
+          <p class="text-white/85 mt-2 text-sm">Ketua Bidang: Melandri</p>
+          <p class="text-white/85 mt-2 text-sm">Wakil Ketua Bidang: Reza M.</p>
+         </div>
+         <div class="grid grid-cols-2 gap-3 pt-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+           <div class="text-2xl font-black text-white">
+            3
+           </div>
+           <div class="text-white/50 text-xs mt-1">
+            Departemen
+           </div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+           <div class="text-2xl font-black text-white">
+            13
+           </div>
+           <div class="text-white/50 text-xs mt-1">
+            Pengurus
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+  <!-- DEPARTEMEN -->
+   <section class="section-fade py-10 sm:py-14 bg-white bg-mesh">
+
+  <h2 class="font-display text-center text-2xl sm:text-3xl text-purple-deep font-bold mb-6">
+    Departemen yang ada dalam Bidang Sosial & Politik:
+  </h2>
+
+  <div class="max-w-8xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+    
+    <!-- Departemen Kajian Aksi Strategis -->
+    <div class="card-hover bg-white rounded-2xl p-5 pt-6 pb-6 text-left 
+            shadow-lg shadow-purple-deep/5 border border-purple-pale/30 group
+            min-h-[260px] flex flex-col justify-between">
+      <div class="flex items-center gap-4 mb-5">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center p-2"
+             style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+          <img src="assets/bidang/departemen/logo-kastrat.png" alt="KASTRAT" class="w-10 h-10 object-contain">
+        </div>
+
+        <div>
+          <h2 class="font-bold text-purple-deep text-sm font-bold leading-tight">Departemen Kajian Aksi Strategis</h2>
+          <p class="text-purple-med text-xs font-medium leading-tight mt-1">Analisis, Isu Strategis, dan Gerakan Intelektual</p>
+        </div>
+      </div>
+
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Menganalisis isu strategis dan merancang aksi yang solutif serta berdampak. Berperan dalam edukasi, publikasi, dan pengawalan kebijakan.
+      </p>
+
+      <div class="mt-5 flex justify-end w-full">
+        <a href="dep5-kastrat.html"
+           class="px-4 py-1.5 bg-purple-med text-white text-xs font-semibold rounded-full 
+                  hover:bg-purple-deep transition-all shadow-sm hover:shadow-md">
+          Detail
+        </a>
+      </div>
+    </div>
+
+    <!-- Departemen Advokasi Kesejahteraan Mahasiswa -->
+    <div class="card-hover bg-white rounded-2xl p-5 pt-6 pb-6 text-left 
+            shadow-lg shadow-purple-deep/5 border border-purple-pale/30 group
+            min-h-[260px] flex flex-col justify-between">
+      <div class="flex items-center gap-4 mb-5">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center p-2"
+             style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+          <img src="assets/bidang/departemen/logo-adkesma.png" alt="ADKESMA" class="w-10 h-10 object-contain">
+        </div>
+
+        <div>
+          <h2 class="font-bold text-purple-deep text-sm font-bold leading-tight">Departemen Advokasi Kesejahteraan Mahasiswa</h2>
+          <p class="text-purple-med text-xs font-medium leading-tight mt-1">Pelayanan, Pendampingan, dan Kesejahteraan Mahasiswa</p>
+        </div>
+      </div>
+
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Mewadahi advokasi dan kesejahteraan mahasiswa melalui pendampingan dan layanan pengaduan. Berperan dalam menciptakan lingkungan kampus yang aman dan sejahtera.
+      </p>
+
+      <div class="mt-5 flex justify-end w-full">
+        <a href="dep6-adkesma.html"
+           class="px-4 py-1.5 bg-purple-med text-white text-xs font-semibold rounded-full 
+                  hover:bg-purple-deep transition-all shadow-sm hover:shadow-md">
+          Detail
+        </a>
+      </div>
+    </div>
+
+    <!-- Departemen Pengabdian Masyarakat -->
+    <div class="card-hover bg-white rounded-2xl p-5 pt-6 pb-6 text-left 
+            shadow-lg shadow-purple-deep/5 border border-purple-pale/30 group
+            min-h-[260px] flex flex-col justify-between">
+      <div class="flex items-center gap-4 mb-5">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center p-2"
+             style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+          <img src="assets/bidang/departemen/logo-pengmas.png" alt="PENGMAS" class="w-10 h-10 object-contain">
+        </div>
+
+        <div>
+          <h2 class="font-bold text-purple-deep text-sm font-bold leading-tight">Departemen Pengabdian Masyarakat</h2>
+          <p class="text-purple-med text-xs font-medium leading-tight mt-1">Aksi Sosial dan Pemberdayaan Masyarakat</p>
+        </div>
+      </div>
+
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Melaksanakan program sosial yang berorientasi pada kontribusi nyata kepada masyarakat. Mendorong pemberdayaan dan kerja sama yang berkelanjutan.
+      </p>
+
+      <div class="mt-5 flex justify-end w-full">
+        <a href="dep7-pengmas.html"
+           class="px-4 py-1.5 bg-purple-med text-white text-xs font-semibold rounded-full 
+                  hover:bg-purple-deep transition-all shadow-sm hover:shadow-md">
+          Detail
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 border-t-4 border-purple-pale/40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-display text-white font-black text-sm" 
+             style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+          <img src="assets/logo-bem.png" alt="Logo BEM" class="w-full h-full object-cover">
+        </div>
+        <span class="text-sm font-semibold text-purple-deep">BEM FAI UNSIKA</span>
+      </div>
+
+      <p class="text-gray-400 text-sm">
+        © 2026 BEM FAI UNSIKA. Konten dan dokumentasi dikelola oleh Departemen Kearsipan
+      </p>
+
+      <div class="flex items-center gap-4">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/bemfaiunsika" target="_blank" rel="noopener noreferrer"
+           class="text-gray-400 hover:text-purple-med transition-colors">
+           <i data-lucide="instagram" style="width:18px;height:18px;"></i>
+        </a>
+
+        <!-- Youtube -->
+        <a href="https://www.youtube.com/@officialbemfaiunsika2570" target="_blank" rel="noopener noreferrer"
+           class="text-gray-400 hover:text-purple-med transition-colors">
+           <i data-lucide="youtube" style="width:18px;height:18px;"></i>
+        </a>
+
+        <!-- TikTok -->
+<a href="https://www.tiktok.com/@bemfaiunsika" target="_blank" rel="noopener noreferrer"
+   class="text-gray-400 hover:text-purple-med transition-colors flex items-center">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" 
+       viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.75 2a5.75 5.75 0 0 0 5.7 5.06v2.18a7.9 7.9 0 0 1-3.47-.77v6.79a6.21 6.21 0 1 1-6.21-6.21c.36 0 .72.04 1.06.1v2.3a3.86 3.86 0 1 0 2.1 3.45V2h.82Z"/>
+  </svg>
+</a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll(".section-fade").forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) el.classList.add("visible");
+    });
+  });
+</script>
+
+</body>
+</html>

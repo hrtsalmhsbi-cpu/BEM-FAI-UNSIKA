@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="id" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PENGMAS - BEM FAI UNSIKA</title>
+
+  <!-- Tailwind + Config -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'purple-deep': '#2D1B4E',
+            'purple-med': '#5B3A8C',
+            'purple-light': '#9B72CF',
+            'purple-soft': '#D4BEF0',
+            'purple-pale': '#F3ECFA',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <style>
+    html, body { height: 100%; margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .section-fade { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .section-fade.visible { opacity: 1; transform: translateY(0); }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(45,27,78,0.15); }
+    .bg-mesh {
+      background: radial-gradient(ellipse at 20% 50%, rgba(91,58,140,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 20%, rgba(155,114,207,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 80%, rgba(212,190,240,0.05) 0%, transparent 50%);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 h-full">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+     style="background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212,190,240,0.3);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl overflow-hidden">
+          <img src="assets/logo-bem.png" alt="Logo BEM" class="w-full h-full object-cover">
+        </div>
+        <div class="block text-xs sm:text-sm">
+          <div class="font-bold text-purple-deep leading-tight">Kabinet Poros Katalis</div>
+          <div class="text-[10px] text-purple-med font-medium tracking-wider">BEM FAI UNSIKA</div>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="index.html#Beranda" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Beranda</a>
+        <a href="index.html#tentang" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Tentang</a>
+        <a href="index.html#bidang" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Struktur</a>
+        <a href="index.html#proker" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Program Kerja</a>
+        <a href="index.html#berita" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Berita</a>
+        <a href="index.html#media" class="nav-link px-3 py-2 text-sm text-gray-600 hover:text-purple-med">Media</a>
+
+        <a href="index.html#kontak"
+           class="ml-2 px-5 py-2.5 text-sm font-semibold text-white rounded-xl"
+           style="background: linear-gradient(135deg, #5B3A8C, #9B72CF);">
+          Kontak
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="relative pt-28" style="height: 70vh;">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="assets/bidang/departemen/departemen.jpeg"
+         class="w-full h-full object-cover">
+  </div>
+
+  <!-- Overlay Blur Gradient (atas tipis, bawah tebal) -->
+  <div class="absolute inset-0" 
+       style="
+         background: linear-gradient(
+           to bottom,
+           rgba(255,255,255,0.25) 0%,
+           rgba(255,255,255,0.55) 35%,
+           rgba(255,255,255,0.80) 65%,
+           rgba(255,255,255,0.92) 100%
+         );
+         backdrop-filter: blur(6px);
+       ">
+  </div>
+
+  <!-- Text di Atas Background -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center mt-28">
+
+    <span class="inline-block px-4 py-1.5 bg-purple-pale text-purple-med text-xs font-bold rounded-full tracking-wider uppercase mb-4">
+      TENTANG KAMI
+    </span>
+
+    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-purple-deep leading-tight">
+      Departemen Pengabdian Masyarakat
+    </h2>
+
+    <!-- Info Ketua & Staff -->
+    <p class="mt-6 text-sm sm:text-base leading-relaxed text-gray-700" style="font-family: 'Alice', serif;">
+      Ketua Departemen: Siti Aulia Zahra <br>
+      Staff Pengurus: Mukhsin Al-Athas¹, Dwi Anik Rahmani², Rifani Nurul Azkia³
+    </p>
+
+    </div>
+</section>
+
+<!-- DESKRIPSI DEPARTEMEN (SEPARATED FROM HERO) -->
+<section class="py-2 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-5xl mx-auto">
+    <p class="text-gray-700 leading-relaxed mt-3 text-base sm:text-lg">
+      Departemen Pengabdian Masyarakat berperan dalam merancang dan melaksanakan program yang berorientasi pada kontribusi nyata kepada masyarakat. Departemen ini bertanggung jawab dalam mengembangkan kegiatan sosial, membangun hubungan dengan masyarakat, serta menciptakan dampak positif melalui program pemberdayaan dan kerja sama yang berkelanjutan.
+    </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE FONT ALICE -->
+<link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
+<style>
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-inner {
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front,
+  .flip-back {
+    backface-visibility: hidden;
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+</style>
+
+<!-- PROGRAM KERJA -->
+<section class="section-fade pt-10 pb-20 sm:pt-12 sm:pb-24 bg-white bg-mesh">
+
+  <h2 class="font-display text-center text-4xl sm:text-4xl text-purple-deep font-bold mb-10">
+    Program Kerja Departemen
+  </h2>
+
+  <div class="max-w-6xl mx-auto px-6 
+              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+              gap-8 place-items-center">
+
+    <!-- CARD 1 -->
+    <div class="flip-card w-full h-72">
+      <div class="flip-inner relative w-full h-full">
+
+        <!-- FRONT -->
+        <div class="flip-front absolute inset-0 rounded-2xl overflow-hidden flex items-center justify-center text-center">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);"></div>
+          <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 30% 40%, #D4BEF0, transparent 60%);"></div>
+
+          <div class="relative z-10 text-white text-3xl font-bold leading-snug" style="font-family: 'Alice', serif;">
+            Program Kerja <br> Departemen
+          </div>
+        </div>
+
+        <!-- BACK with Background Image -->
+        <div class="flip-back absolute inset-0 rounded-2xl overflow-hidden">
+
+          <!-- Background Image -->
+          <div class="absolute inset-0 bg-cover bg-center"
+               style="background-image: url('assets/bidang/departemen/2kearsipan/proker-kearsipan1.jpg');"></div>
+
+          <!-- Grey Overlay -->
+          <div class="absolute inset-0 bg-gray-900/60"></div>
+
+          <!-- Text -->
+          <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
+            <p class="text-white text-xl leading-relaxed" style="font-family: 'Alice', serif;">
+              Ini adalah deskripsi program kerja di sisi belakang kartu.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="flip-card w-full h-72">
+      <div class="flip-inner relative w-full h-full">
+
+        <!-- FRONT -->
+        <div class="flip-front absolute inset-0 rounded-2xl overflow-hidden flex items-center justify-center text-center">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);"></div>
+          <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 30% 40%, #D4BEF0, transparent 60%);"></div>
+
+          <div class="relative z-10 text-white text-3xl font-bold leading-snug" style="font-family: 'Alice', serif;">
+            Program Kerja <br> Departemen
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="flip-back absolute inset-0 rounded-2xl overflow-hidden">
+          <div class="absolute inset-0 bg-cover bg-center"
+               style="background-image: url('assets/bidang/departemen/2kearsipan/proker-kearsipan2.jpg');"></div>
+          <div class="absolute inset-0 bg-gray-900/60"></div>
+
+          <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
+            <p class="text-white text-xl leading-relaxed" style="font-family: 'Alice', serif;">
+              Isi belakang kartu ke-dua dapat kamu ubah.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="flip-card w-full h-72">
+      <div class="flip-inner relative w-full h-full">
+
+        <!-- FRONT -->
+        <div class="flip-front absolute inset-0 rounded-2xl overflow-hidden flex items-center justify-center text-center">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);"></div>
+          <div class="absolute inset-0 opacity-10" style="background: radial-gradient(circle at 30% 40%, #D4BEF0, transparent 60%);"></div>
+
+          <div class="relative z-10 text-white text-3xl font-bold leading-snug" style="font-family: 'Alice', serif;">
+            Program Kerja <br> Departemen
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="flip-back absolute inset-0 rounded-2xl overflow-hidden">
+          <div class="absolute inset-0 bg-cover bg-center"
+               style="background-image: url('assets/bidang/departemen/2kearsipan/proker-kearsipan3.jpg');"></div>
+          <div class="absolute inset-0 bg-gray-900/60"></div>
+
+          <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
+            <p class="text-white text-xl leading-relaxed" style="font-family: 'Alice', serif;">
+              Isi belakang kartu ke-dua dapat kamu ubah.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="py-10 border-t-4 border-purple-pale/40 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center font-display text-white font-black text-sm" 
+             style="background: linear-gradient(135deg, #2D1B4E, #5B3A8C);">
+          <img src="assets/logo-bem.png" alt="Logo BEM" class="w-full h-full object-cover">
+        </div>
+        <span class="text-sm font-semibold text-purple-deep">BEM FAI UNSIKA</span>
+      </div>
+
+      <p class="text-gray-400 text-sm">
+        © 2026 BEM FAI UNSIKA. Konten dan dokumentasi dikelola oleh Departemen Kearsipan
+      </p>
+
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/bemfaiunsika" class="text-gray-400 hover:text-purple-med">
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@officialbemfaiunsika2570" class="text-gray-400 hover:text-purple-med">
+          <i data-lucide="youtube" class="w-5 h-5"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@bemfaiunsika" class="text-gray-400 hover:text-purple-med">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+               viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.75 2a5.75 5.75 0 0 0 5.7 5.06v2.18a7.9 7.9 0 0 1-3.47-.77v6.79a6.21 6.21 0 1 1-6.21-6.21c.36 0 .72.04 1.06.1v2.3a3.86 3.86 0 1 0 2.1 3.45V2h.82Z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll(".section-fade").forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) el.classList.add("visible");
+    });
+  });
+</script>
+
+</body>
+</html>
